@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion Component</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /*
+      SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+      FONT SIZE SYSTEM (px)
+      10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+      */
+
+      /* Main color #087f5b */
+      /* Gray color #343a40 */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+      img {
+        height: 200px;
+        border-radius: 8px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgb(0, 0, 0/ 0.25);
+      }
+      .carousel {
+        background-color: #087f5b;
+        width: 800px;
+        margin: 100px auto;
+        border-radius: 8px;
+        position: relative;
+        /* color: #fff;
+        padding: 32px 48px;
+        padding-left: 86px;
+        display: flex;
+        gap: 86px;*/
+      }
+      .carousel-box {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        padding: 32px 48px;
+        padding-left: 86px;
+        display: flex;
+        gap: 86px;
+        /* position: absolute;
+        display: none; */
+      }
+
+      .open .carousel-box {
+        /* display: block; */
+      }
+
+      .testimonial-text {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #e6fcf5;
+        margin-bottom: 32px;
+      }
+
+      .testimonial-author {
+        font-size: 16px;
+        color: #c3fae8;
+      }
+
+      .testimonial-job {
+        font-size: 14px;
+        color: #c3fae8;
+      }
+      /* CONTROLS */
+      .btn {
+        background-color: #fff;
+        border: none;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+      .btn--left {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+      .btn--right {
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+      .btn-icon {
+        width: 24px;
+        height: 24px;
+        stroke: #087f5b;
+      }
+      .dots {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 32px);
+        display: flex;
+        gap: 4px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #087f5b;
+        background-color: #fff;
+        border-radius: 6.5px;
+        cursor: pointer;
+      }
+      .dot .current-slide {
+        background-color: #087f5b;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="carousel">
+      <!--/////////FIRST BOX///////-->
+      <div class="carousel-box open">
+        <img src="./maria.jpg" alt="Maria de Almeida" />
+        <blockquote class="testimonial">
+          <p class="testimonial-text">
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+            voluptatum, aliquam assumenda consequatur quasi magnam sit doloribus
+            cumque facere optio illo nesciunt."
+          </p>
+          <p class="testimonial-author">Maria de Almeda</p>
+          <p class="testimonial-job">Product Manager at EDP Comercial</p>
+        </blockquote>
+      </div>
+      <!-- /////////SECOND BOX///////-->
+      <div class="carousel-box">
+        <img src="./James.png" alt="James Jakobs" />
+        <blockquote class="testimonial">
+          <p class="testimonial-text">
+            "Cxcepturi itaque illum, nisi quod ipsum ducimus exercitationem
+            aspernatur eius magnam culpa quis assumenda tempora? Veniam,
+            laudantium dolor blanditiis natus voluptas sit?"
+          </p>
+          <p class="testimonial-author">James Jakobs</p>
+          <p class="testimonial-job">CEO of Microsoft</p>
+        </blockquote>
+      </div>
+      <!--/////////THIRD BOX///////-->
+      <div class="carousel-box">
+        <img src="./Mikaila.jpg" alt="Mikaila Okobo" />
+        <blockquote class="testimonial">
+          <p class="testimonial-text">
+            "Impedit voluptatum obcaecati quisquam porro deleniti iste? Deserunt
+            dolorem omnis quis corporis beatae."
+          </p>
+          <p class="testimonial-author">Mikaila Okobo</p>
+          <p class="testimonial-job">Manager of design operations</p>
+        </blockquote>
+      </div>
+      <!--/////////FOURTH BOX///////-->
+      <div class="carousel-box">
+        <img src="./Barack.jpg" alt="Barack Trump" />
+        <blockquote class="testimonial">
+          <p class="testimonial-text">
+            "Facilis necessitatibus adipisci, saepe, deleniti dolores facere
+            dolore sint praesentium velit inventore vel? Repellat consequuntur
+            reprehenderit.""
+          </p>
+          <p class="testimonial-author">Barack Trump</p>
+          <p class="testimonial-job">Retention manager</p>
+        </blockquote>
+      </div>
+
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+      <button class="btn btn--right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="btn-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+      <div class="dots">
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </section>
+    <script>
+      /* When I click right move to the right */
+      /* When I click left move to the left */
+      /* Then I click on the dot move to the selected dot */
+    </script>
+  </body>
+</html>
